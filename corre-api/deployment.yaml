@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corre-api
+  labels:
+    app: corre-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corre-api
+  template:
+    metadata:
+      labels:
+        app: corre-api
+      annotations:
+        vault.hashicorp.com/agent-inject: "true"
+        vault.hashicorp.com/role: "corre-api-app"
+        vault.hashicorp.com/agent-inject-secret-corre-api-config: "secret/data/corre-api"
+        vault.hashicorp.com/agent-inject-template-corre-api-config: |
+          {{- with secret "secret/data/corre-api" -}}
+          {{- toYaml .Data.data -}}
+          {{- end -}}
+    spec:
+      serviceAccountName: default # Usando a service account default para o role do Vault
+      containers:
+      - name: corre-api
+        image: tiquinhonew/corre-api:latest
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: corre-api-config # Nome do secret que o Vault Agent Injector vai criar
