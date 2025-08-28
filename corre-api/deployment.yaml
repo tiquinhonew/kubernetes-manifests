@@ -15,7 +15,7 @@ spec:
         app: corre-api
       annotations:
         vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/role: "corre-api-app"
+        vault.hashicorp.com/role: "debug-role"
         vault.hashicorp.com/agent-inject-secret-corre-api-config: "secret/data/corre-api"
         vault.hashicorp.com/agent-inject-template-corre-api-config: |
           {{- with secret "secret/data/corre-api" -}}
