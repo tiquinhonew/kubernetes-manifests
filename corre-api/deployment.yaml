@@ -22,7 +22,7 @@ spec:
           {{- toYaml .Data.data -}}
           {{- end -}}
     spec:
-      serviceAccountName: default # Usando a service account default para o role do Vault
+      serviceAccountName: corre-api-sa
       containers:
       - name: corre-api
         image: tiquinhonew/corre-api:latest
@@ -30,4 +30,4 @@ spec:
         - containerPort: 8080
         envFrom:
         - secretRef:
-            name: corre-api-config # Nome do secret que o Vault Agent Injector vai criar
+            name: corre-api-config
