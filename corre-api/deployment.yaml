@@ -28,6 +28,9 @@ spec:
         image: tiquinhonew/corre-api:latest
         ports:
         - containerPort: 8080
+        env:
+        - name: VAULT_ADDR
+          value: "http://vault.vault.svc:8200"
         envFrom:
         - secretRef:
             name: corre-api-config
