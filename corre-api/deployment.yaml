@@ -25,7 +25,7 @@ spec:
       serviceAccountName: corre-api-sa
       containers:
       - name: corre-api
-        image: tiquinhonew/corre-api:latest
+        image: tiquinhonew/corre-api:1.0.3
         ports:
         - containerPort: 8080
         env:
