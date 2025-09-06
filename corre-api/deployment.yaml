@@ -20,7 +20,7 @@ spec:
         vault.hashicorp.com/agent-inject-template-corre-api-config: |
           {{- with secret "secret/data/corre-api" -}}
           {{- range $key, $value := .Data.data -}}
-          {{ $key }}: {{ $value | quote }}
+          {{ $key }}: "{{ $value }}"
           {{- end -}}
           {{- end -}}
     spec:
