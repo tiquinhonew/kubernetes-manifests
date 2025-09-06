@@ -24,4 +24,4 @@ spec:
           service:
             name: corre-api
             port:
-              number: 8080
+              number: 80

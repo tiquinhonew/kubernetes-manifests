@@ -13,26 +13,12 @@ spec:
     metadata:
       labels:
         app: corre-api
-      annotations:
-        vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/role: "debug-role"
-        vault.hashicorp.com/agent-inject-secret-corre-api-config: "secret/data/corre-api"
-        vault.hashicorp.com/agent-inject-template-corre-api-config: |
-          {{- with secret "secret/data/corre-api" -}}
-          {{- range $key, $value := .Data.data -}}
-          {{ $key }}: "{{ $value }}"
-          {{- end -}}
-          {{- end -}}
     spec:
-      serviceAccountName: corre-api-sa
       containers:
       - name: corre-api
-        image: tiquinhonew/corre-api:1.0.3
+        image: tiquinhonew/corre-api:latest
         ports:
-        - containerPort: 8080
-        env:
-        - name: VAULT_ADDR
-          value: "http://vault.vault.svc:8200"
+        - containerPort: 3306
         envFrom:
-        - secretRef:
+        - configMapRef:
             name: corre-api-config
