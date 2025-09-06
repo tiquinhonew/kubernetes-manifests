@@ -19,7 +19,9 @@ spec:
         vault.hashicorp.com/agent-inject-secret-corre-api-config: "secret/data/corre-api"
         vault.hashicorp.com/agent-inject-template-corre-api-config: |
           {{- with secret "secret/data/corre-api" -}}
-          {{- toYaml .Data.data -}}
+          {{- range $key, $value := .Data.data -}}
+          {{ $key }}: {{ $value | quote }}
+          {{- end -}}
           {{- end -}}
     spec:
       serviceAccountName: corre-api-sa
