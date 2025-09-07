@@ -4,6 +4,13 @@ metadata:
   name: default-auth
   namespace: vault
 spec:
+  # Referência ao VaultConnection
+  vaultConnectionRef: default-connection
+
+  # Permite que o namespace 'default' use este método de autenticação
+  allowedNamespaces:
+  - "default"
+
   method: kubernetes
   mount: kubernetes
   kubernetes:

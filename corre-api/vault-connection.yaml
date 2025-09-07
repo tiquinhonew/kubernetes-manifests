@@ -1,0 +1,8 @@
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultConnection
+metadata:
+  name: default-connection
+  namespace: vault
+spec:
+  # Endereço do servidor Vault
+  address: http://vault.vault.svc:8200
