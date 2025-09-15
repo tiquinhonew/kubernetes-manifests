@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: corre-api
+  namespace: default
+  labels:
+    app: corre-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: corre-api
+  template:
+    metadata:
+      labels:
+        app: corre-api
+    spec:
+      containers:
+      - name: corre-api
+        image: tiquinhonew/corre-api:1.0.3
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - secretRef:
+            name: corre-api-secrets
