@@ -20,6 +20,79 @@ spec:
         image: tiquinhonew/corre-api:1.0.3
         ports:
         - containerPort: 8080
-        envFrom:
-        - secretRef:
-            name: corre-api-secrets
+        env:
+        - name: API_URL
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: API_URL
+        - name: FRONTEND_URL
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: FRONTEND_URL
+        - name: MAIL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MAIL_HOST
+        - name: MAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MAIL_PASSWORD
+        - name: MAIL_PORT
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MAIL_PORT
+        - name: MAIL_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MAIL_USERNAME
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MYSQL_DATABASE
+        - name: MYSQL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MYSQL_HOST
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MYSQL_PASSWORD
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: MYSQL_USER
+        - name: SERVER_PORT
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: SERVER_PORT
+        - name: TWILIO_ACCOUNT_SID
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: TWILIO_ACCOUNT_SID
+        - name: TWILIO_AUTH_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: TWILIO_AUTH_TOKEN
+        - name: TWILIO_PHONE_NUMBER
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: TWILIO_PHONE_NUMBER
+        - name: TWILIO_SERVICE_SID
+          valueFrom:
+            secretKeyRef:
+              name: corre-api-secrets
+              key: TWILIO_SERVICE_SID
