@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: corre-api
-  namespace: default
+  namespace: corre-api
   labels:
     app: corre-api
 spec:
