@@ -20,3 +20,16 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  resourceIgnoreDifferences:
+  - group: batch
+    kind: Job
+    name: ingress-nginx-admission-create
+    namespace: ingress-nginx
+    jsonPointers:
+    - /spec/template/metadata/annotations
+  - group: batch
+    kind: Job
+    name: ingress-nginx-admission-patch
+    namespace: ingress-nginx
+    jsonPointers:
+    - /spec/template/metadata/annotations
