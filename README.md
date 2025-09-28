@@ -41,7 +41,7 @@ Para adicionar uma nova API ao cluster e integrá-la ao fluxo GitOps com ArgoCD,
     *   Se sua API precisar de segredos do Vault, crie um arquivo `external-secret.yaml` na pasta da sua API (`applications/minha-nova-api/`). Este recurso instruirá o External Secrets Operator a buscar os segredos do Vault e criar um `Secret` nativo do Kubernetes para sua aplicação.
     *   Exemplo de `external-secret.yaml`:
         ```yaml
-        apiVersion: external-secrets.io/v1beta1
+        apiVersion: external-secrets.io/v1
         kind: ExternalSecret
         metadata:
           name: minha-nova-api-external-secret
@@ -62,6 +62,7 @@ Para adicionar uma nova API ao cluster e integrá-la ao fluxo GitOps com ArgoCD,
 
 4.  **Crie a Definição de `Application` do ArgoCD:**
     *   Dentro da pasta `argocd-bootstrap/`, crie um arquivo `minha-nova-api-app.yaml`. Este arquivo dirá ao ArgoCD para monitorar a pasta da sua nova API e implantá-la no cluster.
+    *   O app `applications` no Argo CD (definido em `argocd-bootstrap/applications-app.yaml`) irá descobrir e implantar automaticamente esta nova definição de `Application`.
     *   Exemplo de `minha-nova-api-app.yaml`:
         ```yaml
         apiVersion: argoproj.io/v1alpha1
