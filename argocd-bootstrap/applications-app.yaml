@@ -9,8 +9,7 @@ spec:
     repoURL: https://github.com/tiquinhonew/kubernetes-manifests.git
     targetRevision: HEAD
     path: applications
-    directory:
-      exclude: corre-api
+    
   destination:
     server: https://kubernetes.default.svc
     namespace: default
