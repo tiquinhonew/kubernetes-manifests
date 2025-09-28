@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: applications
     directory:
-      exclude: corre-api
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: default
