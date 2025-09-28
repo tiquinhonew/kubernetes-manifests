@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: corre-api
   namespace: argocd
-  labels:
-    force-sync: "true"
 spec:
   project: default
   source:
