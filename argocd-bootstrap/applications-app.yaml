@@ -10,7 +10,9 @@ spec:
     targetRevision: HEAD
     path: argocd-bootstrap
     directory:
-      exclude: infrastructure-app.yaml
+      exclude: |
+        infrastructure-app.yaml
+        applications-app.yaml
       recurse: true
   destination:
     server: https://kubernetes.default.svc
