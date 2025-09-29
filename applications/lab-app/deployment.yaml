@@ -22,3 +22,5 @@ spec:
         envFrom:
         - secretRef:
             name: lab-app-secrets
+        - secretRef:
+            name: lab-app-secret
