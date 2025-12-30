@@ -5,7 +5,7 @@ Este repositório contém todos os manifestos Kubernetes que definem o estado de
 ## 🌟 O que você encontra aqui:
 
 - **`applications/`**: Contém os manifestos Kubernetes para as aplicações de negócio.
-  - **`corre-api/`**: Manifestos para a implantação da nossa API Java (`corre-api`), incluindo Deployment, Service e Ingress.
+  - **`finances/`**: Manifestos para a implantação da nossa API Java (`finances`), incluindo Deployment, Service e Ingress.
 - **`infrastructure/`**: Contém os manifestos Kubernetes para os componentes de infraestrutura do cluster.
   - **`argocd/`**: Manifestos para a implantação do ArgoCD, nossa ferramenta de GitOps.
   - **`cert-manager/`**: Configurações para o Cert-Manager, responsável pela emissão e gerenciamento de certificados TLS.
@@ -20,7 +20,7 @@ Qualquer alteração no cluster deve ser feita através de um `git push` neste r
 
 ## 🚀 Deployments Atuais:
 
-- **`corre-api`**: `https://corre-api.app.purplebit.com.br`
+- **`finances`**: `https://finances.app.purplebit.com.br`
 - **`Vault UI`**: `https://vault.app.purplebit.com.br`
 - **`ArgoCD UI`**: `https://argocd.app.purplebit.com.br`
 

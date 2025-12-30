@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: argocd-bootstrap
     directory:
-      exclude: |
+      exclude: finances
         infrastructure-app.yaml
         applications-app.yaml
       recurse: true

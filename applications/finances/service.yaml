@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: finances
+  namespace: finances
+  labels:
+    app: finances
+spec:
+  selector:
+    app: finances
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
