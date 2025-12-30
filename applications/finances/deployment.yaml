@@ -17,82 +17,19 @@ spec:
     spec:
       containers:
       - name: finances
-        image: tiquinhonew/finances:39bbc68d49afc3f2eb1061d2741425cd11fa8ed5
+        image: tiquinhonew/finances:latest
         ports:
         - containerPort: 3000
         env:
-        - name: API_URL
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: API_URL
-        - name: FRONTEND_URL
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: FRONTEND_URL
-        - name: MAIL_HOST
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MAIL_HOST
-        - name: MAIL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MAIL_PASSWORD
-        - name: MAIL_PORT
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MAIL_PORT
-        - name: MAIL_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MAIL_USERNAME
-        - name: MYSQL_DATABASE
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MYSQL_DATABASE
-        - name: MYSQL_HOST
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MYSQL_HOST
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MYSQL_PASSWORD
-        - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: MYSQL_USER
-        - name: SERVER_PORT
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: SERVER_PORT
-        - name: TWILIO_ACCOUNT_SID
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: TWILIO_ACCOUNT_SID
-        - name: TWILIO_AUTH_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: TWILIO_AUTH_TOKEN
-        - name: TWILIO_PHONE_NUMBER
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: TWILIO_PHONE_NUMBER
-        - name: TWILIO_SERVICE_SID
-          valueFrom:
-            secretKeyRef:
-              name: finances-secrets
-              key: TWILIO_SERVICE_SID
+        - name: PORT
+          value: "3000"
+        envFrom:
+        - secretRef:
+            name: finances-secrets
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
