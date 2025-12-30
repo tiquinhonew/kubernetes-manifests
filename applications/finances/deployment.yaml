@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: finances
-        image: tiquinhonew/finances:1.0.0
+        image: tiquinhonew/finances:39bbc68d49afc3f2eb1061d2741425cd11fa8ed5
         ports:
         - containerPort: 8080
         env:
