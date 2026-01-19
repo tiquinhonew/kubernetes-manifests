@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: applications/impostor-game
-    repoURL: https://github.com/tiquinho/kubernetes-manifests.git
+    repoURL: https://github.com/tiquinhonew/kubernetes-manifests.git
     targetRevision: HEAD
   syncPolicy:
     automated:
