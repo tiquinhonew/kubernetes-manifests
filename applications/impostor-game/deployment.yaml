@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: impostor-game
-        image: tiquinhonew/impostor-game:f00c68c265f4ffdf48719b6bff57b6960103ccfe
+        image: tiquinhonew/impostor-game:d17a9e27158f1fc55dc46bc5bcd4be8351676e9e
         ports:
         - containerPort: 3000
         env:
