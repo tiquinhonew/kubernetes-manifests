@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: finances
-        image: tiquinhonew/finances:9d97d5dfdc62de438f1dfa9c42db3e741b4bd659
+        image: tiquinhonew/finances:f5f4b502e46b30cc28ec8582463bcfdfc64185ea
         ports:
         - containerPort: 3000
         env:
