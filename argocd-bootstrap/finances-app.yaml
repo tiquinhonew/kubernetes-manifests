@@ -1,23 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: applications
+  name: finances
   namespace: argocd
 spec:
+  destination:
+    namespace: finances
+    server: https://kubernetes.default.svc
   project: default
   source:
+    path: applications/finances
     repoURL: https://github.com/tiquinhonew/kubernetes-manifests.git
     targetRevision: HEAD
-    path: argocd-bootstrap
-    directory:
-      exclude: '{infrastructure-app.yaml,applications-app.yaml}'
-      recurse: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
+    - CreateNamespace=true
