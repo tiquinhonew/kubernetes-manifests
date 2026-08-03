@@ -20,7 +20,7 @@ spec:
   acme:
     # URL do servidor ACME staging
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: douglas@purplebit.com.br
+    email: douglas@ojuara.tech
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
@@ -39,7 +39,7 @@ spec:
   acme:
     # URL do servidor ACME production
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: douglas@purplebit.com.br
+    email: douglas@ojuara.tech
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
@@ -72,7 +72,7 @@ spec:
     organizationalUnits:
       - "Development"
     organizations:
-      - "PurpleBit"
+      - "Ojuara"
     countries:
       - "BR"
   privateKey:

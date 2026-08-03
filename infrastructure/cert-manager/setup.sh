@@ -5,7 +5,7 @@ set -e
 echo "🚀 Configurando cert-manager do zero..."
 
 # Variáveis - CUSTOMIZE AQUI
-EMAIL="douglas@purplebit.com.br"
+EMAIL="douglas@ojuara.tech"
 INGRESS_CLASS="nginx"
 CERT_MANAGER_VERSION="v1.13.2"
 

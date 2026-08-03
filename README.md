@@ -1,4 +1,4 @@
-# 🚀 Kubernetes Manifests - PurpleBit 🦄
+# 🚀 Kubernetes Manifests - Ojuara 🦄
 
 Este repositório é a **Fonte Única da Verdade** para o nosso cluster Kubernetes na OCI. Utilizamos a metodologia **GitOps** com ArgoCD para garantir que o estado do cluster sempre reflita o código presente no GitHub.
 
