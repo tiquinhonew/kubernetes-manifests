@@ -11,7 +11,7 @@ O cluster foi recentemente limpo e otimizado, contando com:
   - **Cert-Manager:** Emissão automática de certificados TLS via Let's Encrypt.
   - **NGINX Ingress Controller:** Ponto de entrada único para tráfego HTTP/HTTPS.
 - **Aplicações Ativas:**
-  - **Finances:** Gerenciador financeiro (`finances.app.purplebit.com.br`).
+  - **Finances:** Gerenciador financeiro (`finances.app.ojuara.tech`).
   - **Impostor Game:** Aplicação interativa de jogo.
 
 ---
@@ -28,7 +28,7 @@ Dentro da pasta criada, você precisa de pelo menos 3 arquivos:
 
 - **`deployment.yaml`**: Define como o container vai rodar (imagem, portas, recursos).
 - **`service.yaml`**: Cria um IP interno para a app ser achada dentro do cluster.
-- **`ingress.yaml`**: Define a URL externa (ex: `minha-app.app.purplebit.com.br`) e vincula ao Ingress Controller e ao TLS.
+- **`ingress.yaml`**: Define a URL externa (ex: `minha-app.app.ojuara.tech`) e vincula ao Ingress Controller e ao TLS.
 
 #### Exemplo de estrutura (baseado no Finances):
 ```yaml

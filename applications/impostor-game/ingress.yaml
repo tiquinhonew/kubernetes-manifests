@@ -13,10 +13,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - "impostor-game.app.purplebit.com.br"
+    - "impostor-game.app.ojuara.tech"
     secretName: impostor-game-tls
   rules:
-  - host: impostor-game.app.purplebit.com.br
+  - host: impostor-game.app.ojuara.tech
     http:
       paths:
       - path: /

@@ -13,10 +13,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - "finances.app.purplebit.com.br"
+    - "finances.app.ojuara.tech"
     secretName: finances-tls
   rules:
-  - host: finances.app.purplebit.com.br
+  - host: finances.app.ojuara.tech
     http:
       paths:
       - path: /

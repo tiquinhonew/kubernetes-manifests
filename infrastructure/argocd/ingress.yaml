@@ -17,10 +17,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - "argocd.app.purplebit.com.br"
+    - "argocd.app.ojuara.tech"
     secretName: argocd-server-tls
   rules:
-  - host: argocd.app.purplebit.com.br
+  - host: argocd.app.ojuara.tech
     http:
       paths:
       - path: /
